@@ -1,5 +1,4 @@
 import UIKit
-import SnapKit
 
 protocol HomePokemonViewProtocol: AnyObject {
     func actionBagasButton()
@@ -60,25 +59,25 @@ class HomePokemonView: UIView {
     }
     
    func configContraintsView() {
-        
-        self.homeImageView.snp.makeConstraints { make in
-            make.top.equalTo(25)
-            make.trailing.equalToSuperview().inset(50)
-            make.height.equalTo(70)
-            make.width.equalTo(70)
-        }
-        
-        self.tableView.snp.makeConstraints { make in
-            make.top.equalTo(self.homeImageView.snp.top).offset(65)
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-        
-        self.titleHome.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(25)
-            make.top.equalToSuperview().offset(45)
-            
-        }
+//        
+//        self.homeImageView.snp.makeConstraints { make in
+//            make.top.equalTo(25)
+//            make.trailing.equalToSuperview().inset(50)
+//            make.height.equalTo(70)
+//            make.width.equalTo(70)
+//        }
+//        
+//        self.tableView.snp.makeConstraints { make in
+//            make.top.equalTo(self.homeImageView.snp.top).offset(65)
+//            make.left.equalToSuperview()
+//            make.right.equalToSuperview()
+//            make.bottom.equalToSuperview()
+//        }
+//        
+//        self.titleHome.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(25)
+//            make.top.equalToSuperview().offset(45)
+//            
+//        }
     }
 }
