@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 internal class PokemonListViewController: UIViewController {
 

@@ -1,6 +1,6 @@
 import UIKit
 
- private class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+ internal class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 

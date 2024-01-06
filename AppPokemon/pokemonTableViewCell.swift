@@ -30,7 +30,7 @@ class PokemonTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview()
-        configContraintsTableView()
+        setupConstrains()
     }
     
     required init?(coder: NSCoder) {
@@ -47,43 +47,29 @@ class PokemonTableViewCell: UITableViewCell {
     
     private func setupConstrains() {
         NSLayoutConstraint.activate([
+            imagePokemon.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            imagePokemon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            imagePokemon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imagePokemon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -225),
+            imagePokemon.heightAnchor.constraint(equalToConstant: 120),
+            
+            textLabelProject.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            textLabelProject.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            
+            imageViewProject.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 320),
+            imageViewProject.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageViewProject.heightAnchor.constraint(equalToConstant: 30),
+            imageViewProject.widthAnchor.constraint(equalToConstant: 30),
+            
+            defenseTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 150),
+            defenseTitle.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 5),
+            defenseTitle.bottomAnchor.constraint(equalTo: attackTitle.bottomAnchor, constant: -25),
+            
+            attackTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 150),
+            attackTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50),
+            attackTitle.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 25),
+            attackTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            
         ])
-    }
-    
-    func configContraintsTableView() {
-        
-//        self.imagePokemon.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            make.centerY.equalToSuperview()
-//            make.leading.equalToSuperview()
-//            make.trailing.equalToSuperview().inset(255)
-//            make.height.equalTo(120)
-//        }
-//        
-//        self.textLabelProject.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            make.leading.equalToSuperview()
-//            
-//            }
-//        
-//        self.imageViewProject.snp.makeConstraints { make in
-//            make.leading.equalToSuperview().offset(320)
-//            make.trailing.equalToSuperview()
-//            make.height.equalTo(30)
-//            make.width.equalTo(30)
-//        }
-//        
-//        self.defenseTitle.snp.makeConstraints { make in
-//            make.leading.equalToSuperview().offset(150)
-//            make.centerY.equalToSuperview().offset(5)
-//            make.bottom.equalTo(self.attackTitle.snp.bottom).offset(25)
-//        }
-//        
-//        self.attackTitle.snp.makeConstraints { make in
-//            make.leading.equalToSuperview().offset(150)
-//            make.centerY.equalToSuperview().offset(25)
-//            make.trailing.equalToSuperview().inset(50)
-//            make.bottom.equalToSuperview()
-//        }
     }
 }

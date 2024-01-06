@@ -6,5 +6,5 @@ target 'AppPokemon' do
   use_frameworks!
 
   # Pods for AppPokemon
-
+ pod 'Kingfisher', '~> 7.0'
 end
