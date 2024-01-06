@@ -32,7 +32,7 @@ class HomePokemonView: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .clear
         tableView.register(PokemonTableViewCell.self, forCellReuseIdentifier: PokemonTableViewCell.identifier)
         return tableView
     }()
@@ -42,7 +42,7 @@ class HomePokemonView: UIView {
          addSubview(titleHome)
          addSubview(homeImageView)
          addSubview(tableView)
-         configContraintsView()
+         setupConstrains()
     }
 
     public func configTableViewProtocol(delegate:UITableViewDelegate, dataSouse: UITableViewDataSource){
@@ -57,27 +57,22 @@ class HomePokemonView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-   func configContraintsView() {
-//        
-//        self.homeImageView.snp.makeConstraints { make in
-//            make.top.equalTo(25)
-//            make.trailing.equalToSuperview().inset(50)
-//            make.height.equalTo(70)
-//            make.width.equalTo(70)
-//        }
-//        
-//        self.tableView.snp.makeConstraints { make in
-//            make.top.equalTo(self.homeImageView.snp.top).offset(65)
-//            make.left.equalToSuperview()
-//            make.right.equalToSuperview()
-//            make.bottom.equalToSuperview()
-//        }
-//        
-//        self.titleHome.snp.makeConstraints { make in
-//            make.leading.equalToSuperview().offset(25)
-//            make.top.equalToSuperview().offset(45)
-//            
-//        }
+    private func setupConstrains() {
+        NSLayoutConstraint.activate([
+            
+            homeImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 25),
+            homeImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
+            homeImageView.heightAnchor.constraint(equalToConstant: 70),
+            homeImageView.widthAnchor.constraint(equalToConstant: 70),
+            
+            tableView.topAnchor.constraint(equalTo: homeImageView.bottomAnchor, constant: 65),
+            tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            titleHome.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
+            titleHome.topAnchor.constraint(equalTo: self.topAnchor, constant: 45)
+            
+        ])
     }
 }

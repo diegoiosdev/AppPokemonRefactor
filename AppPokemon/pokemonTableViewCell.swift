@@ -9,12 +9,14 @@ class PokemonTableViewCell: UITableViewCell {
 
     lazy var imagePokemon: UIImageView = {
         let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
         return image
     }()
     
     lazy var attackTitle: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .red
         label.font = .systemFont(ofSize: 15, weight: .regular)
         return label
@@ -22,6 +24,7 @@ class PokemonTableViewCell: UITableViewCell {
     
     lazy var defenseTitle: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGreen
         label.font = .systemFont(ofSize: 15, weight: .regular)
         return label

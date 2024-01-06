@@ -1,8 +1,7 @@
 import UIKit
-import Kingfisher
 
 internal class PokemonListViewController: UIViewController {
-
+    
     override func loadView() {
         self.homePokemonView = HomePokemonView()
         self.view = self.homePokemonView
