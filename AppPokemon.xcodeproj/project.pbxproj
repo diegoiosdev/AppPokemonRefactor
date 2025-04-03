@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,6 +55,14 @@
 		2A70EABE2B49722400FAEEC1 = {
 			isa = PBXGroup;
 			children = (
+				2A9BDDB22B49818100784C00 /* Lib */,
+				2A8B0A762D9E309100502609 /* Cell's */,
+				2A8B0A752D9E306900502609 /* View's */,
+				2A8B0A742D9E304700502609 /* ViewControlle's */,
+				2A8B0A732D9E302500502609 /* Models  */,
+				2A8B0A722D9E300900502609 /* Network */,
+				2A8B0A712D9E2F3C00502609 /* Example */,
+				2A8B0A702D9E2F1A00502609 /* Aplication  */,
 				2A70EAC92B49722400FAEEC1 /* AppPokemon */,
 				2A70EAC82B49722400FAEEC1 /* Products */,
 				5BB9AA2992B2BA5CEE5296C1 /* Pods */,
@@ -73,19 +81,67 @@
 		2A70EAC92B49722400FAEEC1 /* AppPokemon */ = {
 			isa = PBXGroup;
 			children = (
-				2A9BDDB22B49818100784C00 /* Lib */,
-				2A9BDD9C2B497FC900784C00 /* PokemonListViewController.swift */,
-				2A9BDDA02B497FC900784C00 /* HomePokemonView.swift */,
-				2A9BDDA12B497FC900784C00 /* pokemonTableViewCell.swift */,
-				2A9BDD9E2B497FC900784C00 /* Pokemon.swift */,
-				2A9BDD9A2B497FC900784C00 /* ApiClient.swift */,
-				2A70EACA2B49722400FAEEC1 /* AppDelegate.swift */,
-				2A70EACC2B49722400FAEEC1 /* SceneDelegate.swift */,
 				2A70EAD32B49722500FAEEC1 /* Assets.xcassets */,
 				2A70EAD52B49722500FAEEC1 /* LaunchScreen.storyboard */,
 				2A70EAD82B49722500FAEEC1 /* Info.plist */,
 			);
 			path = AppPokemon;
+			sourceTree = "<group>";
+		};
+		2A8B0A702D9E2F1A00502609 /* Aplication  */ = {
+			isa = PBXGroup;
+			children = (
+				2A70EACC2B49722400FAEEC1 /* SceneDelegate.swift */,
+				2A70EACA2B49722400FAEEC1 /* AppDelegate.swift */,
+			);
+			path = "Aplication ";
+			sourceTree = "<group>";
+		};
+		2A8B0A712D9E2F3C00502609 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		2A8B0A722D9E300900502609 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2A9BDD9A2B497FC900784C00 /* ApiClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2A8B0A732D9E302500502609 /* Models  */ = {
+			isa = PBXGroup;
+			children = (
+				2A9BDD9E2B497FC900784C00 /* Pokemon.swift */,
+			);
+			path = "Models ";
+			sourceTree = "<group>";
+		};
+		2A8B0A742D9E304700502609 /* ViewControlle's */ = {
+			isa = PBXGroup;
+			children = (
+				2A9BDD9C2B497FC900784C00 /* PokemonListViewController.swift */,
+			);
+			path = "ViewControlle's";
+			sourceTree = "<group>";
+		};
+		2A8B0A752D9E306900502609 /* View's */ = {
+			isa = PBXGroup;
+			children = (
+				2A9BDDA02B497FC900784C00 /* HomePokemonView.swift */,
+			);
+			path = "View's";
+			sourceTree = "<group>";
+		};
+		2A8B0A762D9E309100502609 /* Cell's */ = {
+			isa = PBXGroup;
+			children = (
+				2A9BDDA12B497FC900784C00 /* pokemonTableViewCell.swift */,
+			);
+			path = "Cell's";
 			sourceTree = "<group>";
 		};
 		2A9BDDB22B49818100784C00 /* Lib */ = {
@@ -211,9 +267,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AppPokemon/Pods-AppPokemon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AppPokemon/Pods-AppPokemon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
