@@ -21,7 +21,7 @@ internal class PokemonListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-   }
+    }
 }
 
 extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource  {
@@ -33,7 +33,7 @@ extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 145
     }
-  
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  pokemons.count
     }

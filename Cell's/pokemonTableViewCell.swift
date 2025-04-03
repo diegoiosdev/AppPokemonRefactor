@@ -1,12 +1,12 @@
 import UIKit
 
 class PokemonTableViewCell: UITableViewCell {
-
+    
     static let identifier:String = "PokemonTableViewCell"
     
     let imageViewProject:UIImageView = .imageViewProject(named: "star")
     let textLabelProject:UILabel = .textLabelProject(0)
-
+    
     lazy var imagePokemon: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +29,7 @@ class PokemonTableViewCell: UITableViewCell {
         label.font = .systemFont(ofSize: 15, weight: .regular)
         return label
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview()
@@ -40,12 +40,12 @@ class PokemonTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-     func addSubview() {
-         self.contentView.addSubview(imagePokemon)
-         self.contentView.addSubview(textLabelProject)
-         self.contentView.addSubview(attackTitle)
-         self.contentView.addSubview(defenseTitle)
-         self.contentView.addSubview(imageViewProject)
+    func addSubview() {
+        self.contentView.addSubview(imagePokemon)
+        self.contentView.addSubview(textLabelProject)
+        self.contentView.addSubview(attackTitle)
+        self.contentView.addSubview(defenseTitle)
+        self.contentView.addSubview(imageViewProject)
     }
     
     private func setupConstrains() {
