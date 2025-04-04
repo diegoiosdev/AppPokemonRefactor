@@ -55,14 +55,13 @@
 		2A70EABE2B49722400FAEEC1 = {
 			isa = PBXGroup;
 			children = (
+				2A8B0A702D9E2F1A00502609 /* Aplication  */,
 				2A9BDDB22B49818100784C00 /* Lib */,
 				2A8B0A762D9E309100502609 /* Cell's */,
 				2A8B0A752D9E306900502609 /* View's */,
 				2A8B0A742D9E304700502609 /* ViewControlle's */,
 				2A8B0A732D9E302500502609 /* Models  */,
 				2A8B0A722D9E300900502609 /* Network */,
-				2A8B0A712D9E2F3C00502609 /* Example */,
-				2A8B0A702D9E2F1A00502609 /* Aplication  */,
 				2A70EAC92B49722400FAEEC1 /* AppPokemon */,
 				2A70EAC82B49722400FAEEC1 /* Products */,
 				5BB9AA2992B2BA5CEE5296C1 /* Pods */,
@@ -95,13 +94,6 @@
 				2A70EACA2B49722400FAEEC1 /* AppDelegate.swift */,
 			);
 			path = "Aplication ";
-			sourceTree = "<group>";
-		};
-		2A8B0A712D9E2F3C00502609 /* Example */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Example;
 			sourceTree = "<group>";
 		};
 		2A8B0A722D9E300900502609 /* Network */ = {

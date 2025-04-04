@@ -1,6 +1,6 @@
 import UIKit
 
-internal class PokemonListViewController: UIViewController {
+class PokemonListViewController: UIViewController {
     
     override func loadView() {
         self.homePokemonView = HomePokemonView()
