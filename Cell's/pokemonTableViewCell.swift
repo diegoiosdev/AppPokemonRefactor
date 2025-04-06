@@ -18,7 +18,7 @@ class PokemonTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .red
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 15, weight: .semibold)
         return label
     }()
     
@@ -26,7 +26,20 @@ class PokemonTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .systemGreen
-        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = .systemFont(ofSize: 15, weight: .semibold)
+        return label
+    }()
+    
+    lazy var notDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .blue
+        label.font = .systemFont(ofSize: 12, weight: .semibold)
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 1
+        label.textAlignment = .left
         return label
     }()
     
@@ -46,32 +59,32 @@ class PokemonTableViewCell: UITableViewCell {
         self.contentView.addSubview(attackTitle)
         self.contentView.addSubview(defenseTitle)
         self.contentView.addSubview(imageViewProject)
+        self.contentView.addSubview(notDescription)
     }
     
     private func setupConstrains() {
         NSLayoutConstraint.activate([
-            imagePokemon.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            imagePokemon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            imagePokemon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            imagePokemon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -225),
-            imagePokemon.heightAnchor.constraint(equalToConstant: 120),
             
-            textLabelProject.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            textLabelProject.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            textLabelProject.centerXAnchor.constraint(equalTo: contentView.centerXAnchor,constant: 10),
+            textLabelProject.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 10),
+            
+            imagePokemon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 150),
+            imagePokemon.heightAnchor.constraint(equalToConstant: 120),
             
             imageViewProject.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 320),
             imageViewProject.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageViewProject.heightAnchor.constraint(equalToConstant: 30),
             imageViewProject.widthAnchor.constraint(equalToConstant: 30),
             
-            defenseTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 150),
-            defenseTitle.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 5),
-            defenseTitle.bottomAnchor.constraint(equalTo: attackTitle.bottomAnchor, constant: -25),
+            defenseTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            defenseTitle.centerYAnchor.constraint(equalTo: textLabelProject.centerYAnchor, constant: 25),
             
-            attackTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 150),
-            attackTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50),
-            attackTitle.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 25),
-            attackTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            attackTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            attackTitle.centerYAnchor.constraint(equalTo: defenseTitle.centerYAnchor, constant: 25),
+            
+            notDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            notDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            notDescription.centerYAnchor.constraint(equalTo: attackTitle.centerYAnchor, constant: 100)
             
         ])
     }

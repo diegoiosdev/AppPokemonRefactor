@@ -7,5 +7,16 @@ struct Pokemon: Decodable, Identifiable {
     let name: String
     let imageUrl: String
     let type: String
-    let description: String
+    let notDescription: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case defense
+        case name
+        case imageUrl
+        case type
+        case attack
+        case notDescription = "description"
+    }
+    
 }

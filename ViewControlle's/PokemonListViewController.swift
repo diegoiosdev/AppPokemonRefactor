@@ -27,11 +27,11 @@ class PokemonListViewController: UIViewController {
 extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource  {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 145
+        return 210
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,15 +40,16 @@ extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PokemonTableViewCell? = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.identifier, for: indexPath) as? PokemonTableViewCell
-        cell?.textLabelProject.text = pokemons[indexPath.row].name
-        cell?.attackTitle.text = "Ataque: \(pokemons[indexPath.row].attack)"
-        cell?.defenseTitle.text = "Defesa: \(pokemons[indexPath.row].defense)"
         if let urlString = pokemons[indexPath.row].imageUrl as? String {
             if let imageURL = URL(string: urlString){
                 DispatchQueue.global().async {
                     guard let imageData = try? Data( contentsOf: imageURL) else { return}
                     let image = UIImage(data: imageData)
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [self] in
+                        cell?.attackTitle.text = "Attack: \(pokemons[indexPath.row].attack)"
+                        cell?.defenseTitle.text = "Defense: \(pokemons[indexPath.row].defense)"
+                        cell?.notDescription.text = "Description: \(pokemons[indexPath.row].notDescription)"
+                        cell?.textLabelProject.text = self.pokemons[indexPath.row].name.uppercased(with: .autoupdatingCurrent)
                         cell?.imagePokemon.image = image
                     }
                 }
