@@ -47,6 +47,10 @@ class PokemonTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview()
         setupConstrains()
+        contentView.layer.cornerRadius = 12
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.systemTeal.cgColor
+        contentView.layer.masksToBounds = true
     }
     
     required init?(coder: NSCoder) {
@@ -60,6 +64,32 @@ class PokemonTableViewCell: UITableViewCell {
         self.contentView.addSubview(defenseTitle)
         self.contentView.addSubview(imageViewProject)
         self.contentView.addSubview(notDescription)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imagePokemon.image = nil
+        imageViewProject.image = nil
+        attackTitle.text = nil
+        defenseTitle.text = nil
+    }
+    
+    func configure(with pokemon: Pokemon) {
+        attackTitle.text = "Attack: \(pokemon.attack)"
+        defenseTitle.text = "Defense: \(pokemon.defense)"
+        notDescription.text = "Description: \(pokemon.notDescription)"
+        textLabelProject.text = pokemon.name.uppercased(with: .autoupdatingCurrent)
+        imagePokemon.image = nil
+        if let imageURL = URL(string: pokemon.imageUrl) {
+            DispatchQueue.global(qos: .background).async {
+                if let imageData = try? Data(contentsOf: imageURL),
+                   let image = UIImage(data: imageData) {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.imagePokemon.image = image
+                    }
+                }
+            }
+        }
     }
     
     private func setupConstrains() {

@@ -15,7 +15,7 @@ class HomePokemonView: UIView {
     lazy var titleHome: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .blue
+        label.textColor = .systemTeal
         label.font = UIFont.boldSystemFont(ofSize: 45)
         label.text = "Pokemon"
         return label
