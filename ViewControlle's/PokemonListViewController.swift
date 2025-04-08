@@ -46,54 +46,8 @@ extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource 
         let pokemon =  pokemons[indexPath.row]
         cell.configure(with: pokemon)
         return cell
-        
-//        let pokemon = pokemons[indexPath.row]
-//        
-//        // Configura textos da célula
-//        cell.attackTitle.text = "Attack: \(pokemon.attack)"
-//        cell.defenseTitle.text = "Defense: \(pokemon.defense)"
-//        cell.notDescription.text = "Description: \(pokemon.notDescription)"
-//        cell.textLabelProject.text = pokemon.name.uppercased(with: .autoupdatingCurrent)
-//        cell.imagePokemon.image = nil // Placeholder ou nil antes de carregar nova imagem
-//        
-//        // Carrega imagem de forma assíncrona
-//        if let imageURL = URL(string: pokemon.imageUrl) {
-//            DispatchQueue.global(qos: .background).async {
-//                if let imageData = try? Data(contentsOf: imageURL),
-//                   let image = UIImage(data: imageData) {
-//                    DispatchQueue.main.async {
-//                        // Verifica se a célula ainda está visível para o indexPath
-//                        if tableView.indexPath(for: cell) == indexPath {
-//                            cell.imagePokemon.image = image
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        
-//        return cell
     }
     
-    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell: PokemonTableViewCell? = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.identifier, for: indexPath) as? PokemonTableViewCell
-//        if let urlString = pokemons[indexPath.row].imageUrl as? String {
-//            if let imageURL = URL(string: urlString){
-//                DispatchQueue.global().async {
-//                    guard let imageData = try? Data( contentsOf: imageURL) else { return}
-//                    let image = UIImage(data: imageData)
-//                    DispatchQueue.main.async { [self] in
-//                        cell?.attackTitle.text = "Attack: \(pokemons[indexPath.row].attack)"
-//                        cell?.defenseTitle.text = "Defense: \(pokemons[indexPath.row].defense)"
-//                        cell?.notDescription.text = "Description: \(pokemons[indexPath.row].notDescription)"
-//                        cell?.textLabelProject.text = self.pokemons[indexPath.row].name.uppercased(with: .autoupdatingCurrent)
-//                        cell?.imagePokemon.image = image
-//                    }
-//                }
-//            }
-//        }
-//        return cell ?? UITableViewCell()
-//    }
 }
 
 extension PokemonListViewController: pokemonManagerDelegate {
